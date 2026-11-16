@@ -9,27 +9,78 @@
 :root{--brand:#4C9AA4;--ink:#193c43;--muted:#50666b;--line:#d7e5e6;--wash:#eef6f6}*{box-sizing:border-box}body{margin:0;background:#f7faf9;color:var(--ink);font:16px/1.55 system-ui,-apple-system,sans-serif}main{max-width:720px;margin:auto;padding:28px 20px 48px}header{display:flex;justify-content:space-between;align-items:center;gap:12px}.wordmark{font-size:24px;font-weight:800;letter-spacing:2px}.badge{font-size:12px;font-weight:700;background:#fff1d6;color:#765015;border:1px solid #e8d1a5;border-radius:24px;padding:7px 12px}.intro{padding:35px 0 22px}.eyebrow{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:700}h1{font-size:clamp(32px,7vw,46px);line-height:1.12;letter-spacing:-1.8px;margin:10px 0 18px}h1 span{color:#32757e}p{margin:10px 0;color:var(--muted)}.notice{border-left:4px solid var(--brand);background:var(--wash);padding:16px 18px;border-radius:0 12px 12px 0;font-size:14px}.notice strong{color:var(--ink)}h2{font-size:20px;margin:26px 0 12px}button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #193c43;outline-offset:4px}.roles{display:grid;grid-template-columns:1fr 1fr;gap:12px}.role{border:1px solid var(--line);background:white;text-align:left;padding:20px;border-radius:16px;color:var(--ink);min-height:130px}.role[aria-pressed="true"]{border:2px solid var(--brand);padding:19px;background:var(--wash)}.role strong{display:block;font-size:18px;margin:8px 0}.role small{color:var(--muted)}.number{font-size:12px;font-weight:700;color:#32757e}.panel{margin-top:20px;padding:22px;background:white;border:1px solid var(--line);border-radius:16px}.panel h2{margin:0 0 10px}label{display:block;font-size:14px;font-weight:700;margin:20px 0 8px}select{width:100%;background:white;color:var(--ink);padding:13px;border:1px solid #9bb4b8;border-radius:10px;min-height:48px}.sample{margin-top:20px;padding:18px;background:#f3f7f7;border-radius:12px}.sample p{color:var(--ink);font-size:20px;margin-bottom:0}.sample .original{font-size:16px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:16px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.actions button:enabled{background:#32757e;color:white;cursor:pointer}.transcript{white-space:pre-wrap;overflow-wrap:anywhere}.actions button{border:1px solid var(--line);border-radius:10px;padding:12px 16px;background:var(--wash);color:#60767b;cursor:not-allowed}.caption{font-size:13px}details{border-top:1px solid var(--line);margin-top:24px;padding-top:18px}summary{cursor:pointer;font-weight:650;min-height:44px}footer{font-size:12px;color:var(--muted);margin-top:26px;display:flex;justify-content:space-between;gap:12px}noscript{display:block;padding:16px;color:#765015}@media(max-width:380px){.roles{grid-template-columns:1fr}main{padding:20px 16px}.panel{padding:16px}}
 </style></head>
 <body><main>
-<header><div class="wordmark" aria-label="CHAKS">CHAKS</div><span class="badge">TEST MICRO · FRANÇAIS</span></header>
+<header><div class="wordmark" aria-label="CHAKS">CHAKS</div><span class="badge">TEST · TRADUCTION</span></header>
 <section class="intro"><div class="eyebrow">Translate / Réunions multilingues</div><h1>Une réunion.<br><span>Plusieurs langues.</span></h1><p>Du français vers le Deutsch, l’English et le Nederlands.<br>Pour vos collègues sur place ou à distance.</p></section>
-<div class="notice"><strong>Test de reconnaissance vocale française.</strong><br>Le microphone transcrit votre voix en français sur cet appareil. Traduction, audio traduit et synchronisation entre participants ne sont pas encore disponibles. Les exemples multilingues restent préécrits.</div>
+<div class="notice"><strong>Test de reconnaissance vocale française.</strong><br>Le microphone transcrit votre voix en français. Avec votre accord, la dernière phrase finalisée est traduite vers la langue choisie via MyMemory. Version de test : audio traduit et synchronisation entre participants indisponibles.</div>
 <h2>Choisissez votre espace</h2><div class="roles" aria-label="Rôle">
 <button class="role" id="host" aria-pressed="false"><span class="number">01 / ORGANISER</span><strong>Animateur</strong><small>Explorer l’espace de présentation →</small></button>
 <button class="role" id="guest" aria-pressed="true"><span class="number">02 / PARTICIPER</span><strong>Participant</strong><small>Choisir une langue et voir un exemple →</small></button></div>
-<section class="panel" aria-labelledby="panel-title"><h2 id="panel-title">Espace participant · aperçu</h2><p id="role-note">Testez les trois langues ci-dessous. Vous ne rejoignez aucune réunion réelle.</p>
+<section class="panel" aria-labelledby="panel-title"><h2 id="panel-title">Espace participant · aperçu</h2><p id="role-note">Choisissez une langue. Le texte de cet appareil n’est pas partagé avec d’autres participants.</p>
 <label for="language">Langue des sous-titres / Subtitle language</label><select id="language"><option value="de">Deutsch — Allemand</option><option value="en">English — Anglais</option><option value="nl">Nederlands — Néerlandais</option></select>
-<div class="sample"><div class="eyebrow">Français · texte source préécrit</div><p class="original" lang="fr">Bonjour à tous. Bienvenue à notre réunion CHAKS.</p><div class="eyebrow" id="sample-label">Deutsch · exemple préécrit</div><p id="translation" lang="de" aria-live="polite">Guten Tag zusammen. Willkommen zu unserem CHAKS-Meeting.</p></div>
+<div class="notice"><label style="display:flex;gap:10px;margin:0;font-weight:400"><input id="translation-consent" type="checkbox" style="min-width:22px;min-height:22px">J’accepte d’envoyer mes phrases françaises à MyMemory (Translated) pour ce test de traduction en ligne. Ne pas utiliser de données confidentielles.</label><p class="caption">MyMemory indique conserver les segments soumis sur le long terme et peut faire appel à d’autres fournisseurs. <a href="https://mymemory.translated.net/terms-and-conditions" target="_blank" rel="noopener noreferrer">Conditions et confidentialité</a>. Traduction automatique pouvant contenir des erreurs. Quota anonyme : 5 000 caractères par jour, partagé selon les limites du service. Seule la dernière phrase finalisée est traduite. Aucune connexion à une réunion distante.</p></div>
+<div class="sample"><div class="eyebrow">Dernière phrase française à traduire</div><p id="translation-source" class="original" lang="fr">En attente d’une phrase.</p><div class="eyebrow" id="sample-label">Deutsch · traduction automatique</div><p id="translation" lang="de" aria-live="polite">Activez la traduction ci-dessus, puis parlez ou testez un texte.</p><p id="translation-status" class="caption" role="status">Traduction désactivée : aucun texte envoyé.</p></div>
+<details><summary>Tester la traduction sans microphone</summary><label for="manual-source">Une phrase en français</label><textarea id="manual-source" rows="3" maxlength="400" style="width:100%;font:inherit;padding:12px;border:1px solid #9bb4b8;border-radius:10px">Bonjour à tous. Bienvenue à notre réunion CHAKS.</textarea><div class="actions"><button id="translate-now" type="button">Traduire ce texte</button></div><p class="caption">Ce bouton envoie uniquement le texte saisi, après votre accord ci-dessus.</p></details>
 <section aria-labelledby="speech-title"><h2 id="speech-title">Microphone · français</h2><p class="caption">En cliquant sur « Démarrer le micro », vous autorisez un test vocal. Selon le navigateur, votre audio peut être envoyé à son service de reconnaissance en ligne. Utilisez une phrase de test sans information confidentielle. Cette page ne sauvegarde ni audio ni transcription.</p><p id="speech-status" role="status">Choisissez Animateur pour tester le microphone.</p><div class="sample"><div class="eyebrow">Transcription française · cet appareil uniquement</div><p class="transcript" id="transcript" lang="fr">Aucune parole reconnue pour le moment.</p><p id="interim" class="caption" lang="fr"></p></div></section><div class="actions"><button id="mic" disabled>Démarrer le micro</button><button id="clear" disabled>Effacer le texte</button><button disabled>Audio traduit · à venir</button></div><p class="caption" id="connection" role="status">Aucune réunion connectée · transcription non partagée.</p></section>
 <details><summary>Installer sur mon téléphone</summary><p>Après publication en HTTPS : sur iPhone, ouvrez cette page dans Safari, puis Partager → Ajouter à l’écran d’accueil. Sur Android, ouvrez le menu de Chrome → Installer l’application ou Ajouter à l’écran d’accueil, selon votre navigateur.</p><p>Ouvrez une première fois la page avec Internet pour préparer le cache. Le mode hors connexion concerne uniquement cette démonstration.</p></details>
-<details><summary>Ce qui viendra ensuite</summary><p>Après ce test de reconnaissance du français : traduction, lecture vocale et synchronisation des sous-titres. La participation à distance n’est pas encore connectée ; utilisez votre outil habituel pour la réunion.</p></details>
+<details><summary>Ce qui viendra ensuite</summary><p>Après ce test de traduction : lecture vocale et synchronisation des sous-titres. La participation à distance n’est pas encore connectée ; utilisez votre outil habituel pour la réunion.</p></details>
 <noscript>Activez JavaScript pour changer d’espace et de langue. Le texte affiché reste un exemple de démonstration.</noscript>
-<footer><span>CHAKS Translate</span><span>Étape 03 · Test vocal v0.2</span></footer>
+<footer><span>CHAKS Translate</span><span>Étape 04 · Traduction test v0.3</span></footer>
 </main>
 <script>
-const samples={de:['Deutsch','Guten Tag zusammen. Willkommen zu unserem CHAKS-Meeting.'],en:['English','Hello everyone. Welcome to our CHAKS meeting.'],nl:['Nederlands','Hallo allemaal. Welkom bij onze CHAKS-vergadering.']};
 const language=document.getElementById('language');
-language.addEventListener('change',()=>{const [name,text]=samples[language.value];document.getElementById('sample-label').textContent=name+' · exemple préécrit';const target=document.getElementById('translation');target.lang=language.value;target.textContent=text;});
+const languageNames={de:'Deutsch',en:'English',nl:'Nederlands'};
+let latestSource='',translationGeneration=0,translationAbort=null;
+const translationCache=new Map();
+function splitForTranslation(text){
+ const parts=[];let part='';
+ for(const char of text){if(new TextEncoder().encode(part+char).length>450){parts.push(part);part='';}part+=char;}
+ if(part.trim())parts.push(part);return parts;
+}
+function cancelTranslation(){translationGeneration++;if(translationAbort)translationAbort.abort();translationAbort=null;}
+async function translateLatest(text){
+ cancelTranslation();const generation=translationGeneration;
+ const target=language.value, output=document.getElementById('translation'),state=document.getElementById('translation-status');
+ latestSource=text.trim();
+ document.getElementById('sample-label').textContent=languageNames[target]+' · traduction automatique';
+ document.getElementById('translation-source').textContent=latestSource||'En attente d’une phrase.';
+ output.lang=target;output.textContent='';
+ if(!document.getElementById('translation-consent').checked){state.textContent='Traduction désactivée : cochez votre accord pour envoyer le texte à MyMemory.';return;}
+ if(!latestSource){state.textContent='Saisissez ou prononcez une phrase en français.';return;}
+ if(navigator.onLine===false){state.textContent='Traduction indisponible hors connexion.';return;}
+ const cacheKey=target+'|'+latestSource;
+ if(translationCache.has(cacheKey)){output.textContent=translationCache.get(cacheKey);state.textContent='Traduction disponible · résultat réutilisé sans nouvel envoi.';return;}
+ const controller=new AbortController();translationAbort=controller;
+ state.textContent='Traduction en cours vers '+languageNames[target]+'…';
+ const timer=setTimeout(()=>controller.abort(),20000);
+ try{
+  const pieces=[];
+  for(const part of splitForTranslation(latestSource)){
+   const url=new URL('https://api.mymemory.translated.net/get');url.searchParams.set('q',part);url.searchParams.set('langpair','fr|'+target);
+   const response=await fetch(url.toString(),{signal:controller.signal,referrerPolicy:'no-referrer',credentials:'omit',cache:'no-store'});
+   if(!response.ok)throw new Error(response.status===429?'quota':'network');
+   const data=await response.json();
+   if(data.quotaFinished||Number(data.responseStatus)===429||Number(data.responseStatus)===403)throw new Error('quota');
+   if(Number(data.responseStatus)!==200||!data.responseData||typeof data.responseData.translatedText!=='string'||!data.responseData.translatedText.trim())throw new Error('service');
+   pieces.push(data.responseData.translatedText);
+  }
+  if(generation!==translationGeneration)return;
+  const translated=pieces.join(' ');translationCache.set(cacheKey,translated);
+  if(translationCache.size>100)translationCache.delete(translationCache.keys().next().value);
+  output.textContent=translated;state.textContent='Traduction automatique · vérifiez le sens. Dernière phrase uniquement.';
+ }catch(error){
+  if(generation!==translationGeneration)return;
+  output.textContent='Traduction indisponible pour cette phrase.';
+  state.textContent=error.message==='quota'?'Quota du service atteint : limite gratuite MyMemory. Réessayez plus tard.':error.name==='AbortError'?'Le service met trop de temps à répondre. Réessayez.':'Échec de traduction. Vérifiez Internet ou réessayez plus tard.';
+ }finally{clearTimeout(timer);if(generation===translationGeneration)translationAbort=null;}
+}
+language.addEventListener('change',()=>{translateLatest(latestSource);});
+document.getElementById('translate-now').addEventListener('click',()=>translateLatest(document.getElementById('manual-source').value));
+document.getElementById('translation-consent').addEventListener('change',()=>{
+ if(document.getElementById('translation-consent').checked){document.getElementById('translation-status').textContent='Traduction activée pour les prochaines phrases. Aucun texte déjà affiché n’est envoyé automatiquement.';}
+ else{cancelTranslation();document.getElementById('translation').textContent='Traduction désactivée.';document.getElementById('translation-status').textContent='Aucun nouvel envoi à MyMemory.';}
+});
 let currentRole='guest';
-let recognizer=null, phase='idle', transcript='', failed=false, hasSpeech=false;
+let recognizer=null, phase='idle', transcript='', failed=false;
 const mic=document.getElementById('mic'), clear=document.getElementById('clear'), status=document.getElementById('speech-status');
 const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
 function renderControls(){
@@ -37,21 +88,13 @@ function renderControls(){
  mic.textContent=phase==='idle'?'Démarrer le micro':phase==='stopping'?'Arrêt en cours…':'Arrêter le micro';
  clear.disabled=phase!=='idle'||!transcript;
 }
-function hideExample(){
- hasSpeech=true;
- document.getElementById('sample-label').textContent='Traduction non connectée';
- document.getElementById('translation').textContent='La transcription ci-dessous n’est pas encore traduite.';
- document.getElementById('translation').lang='fr';
-}
-// Language selection never presents a prerecorded translation as recognized speech.
-language.addEventListener('change',()=>{if(hasSpeech)hideExample();});
 for(const role of ['host','guest'])document.getElementById(role).addEventListener('click',()=>{
  const host=role==='host';currentRole=role;
  if(!host&&recognizer&&phase!=='idle'){phase='stopping';recognizer.abort();}
  document.getElementById('host').setAttribute('aria-pressed',String(host));
  document.getElementById('guest').setAttribute('aria-pressed',String(!host));
- document.getElementById('panel-title').textContent=host?'Espace animateur · test du micro':'Espace participant · aperçu';
- document.getElementById('role-note').textContent=host?'Langue source : français. Lancez le test ci-dessous ; aucune réunion ne sera créée.':'Exemples uniquement. Aucune réception en direct depuis un autre appareil.';
+ document.getElementById('panel-title').textContent=host?'Espace animateur · test de traduction':'Espace participant · aperçu';
+ document.getElementById('role-note').textContent=host?'Langue source : français. Lancez le test ci-dessous ; aucune réunion ne sera créée.':'Test sur cet appareil uniquement. Aucune réception depuis un autre participant.';
  if(phase==='idle')status.textContent=host?(Recognition?'Prêt. Cliquez sur Démarrer le micro, puis autorisez le microphone.':'Navigateur non compatible. Essayez Chrome sur ordinateur ou Android, ou Safari sur iPhone ; la disponibilité peut varier.'):'Choisissez Animateur pour tester le microphone.';
  renderControls();
 });
@@ -59,7 +102,7 @@ mic.addEventListener('click',()=>{
  if(currentRole!=='host'||!Recognition)return;
  if(phase!=='idle'){phase='stopping';status.textContent='Arrêt du microphone…';renderControls();try{recognizer.stop();}catch{phase='idle';renderControls();}return;}
  if(navigator.onLine===false){status.textContent='Vous êtes hors connexion. Reconnectez-vous pour ce test vocal.';return;}
- failed=false;let sessionText=transcript;
+ failed=false;let sessionText=transcript,lastFinal='';
  recognizer=new Recognition();const active=recognizer;
  active.lang='fr-FR';active.continuous=true;active.interimResults=true;
  phase='starting';status.textContent='Demande d’accès au microphone…';renderControls();
@@ -71,7 +114,7 @@ mic.addEventListener('click',()=>{
   transcript=(sessionText+' '+finalText).trim();
   document.getElementById('transcript').textContent=transcript||'Parlez en français…';
   document.getElementById('interim').textContent=interimText?('En cours : '+interimText):'';
-  if(finalText||interimText)hideExample();
+  if(finalText.trim()&&finalText!==lastFinal){lastFinal=finalText;const finals=Array.from(event.results).filter(r=>r.isFinal);translateLatest(finals[finals.length-1][0].transcript);}
  };
  active.onerror=event=>{
   failed=true;
@@ -81,7 +124,7 @@ mic.addEventListener('click',()=>{
  active.onend=()=>{if(active!==recognizer)return;phase='idle';document.getElementById('interim').textContent='';if(!failed)status.textContent='Microphone arrêté. Cliquez sur Démarrer le micro pour reprendre.';renderControls();};
  try{active.start();}catch{phase='idle';status.textContent='Impossible de démarrer. Réessayez dans un navigateur compatible.';renderControls();}
 });
-clear.addEventListener('click',()=>{if(phase!=='idle')return;transcript='';document.getElementById('transcript').textContent='Aucune parole reconnue pour le moment.';document.getElementById('interim').textContent='';renderControls();});
+clear.addEventListener('click',()=>{if(phase!=='idle')return;transcript='';latestSource='';cancelTranslation();document.getElementById('translation').textContent='En attente d’une phrase.';document.getElementById('translation-source').textContent='En attente d’une phrase.';document.getElementById('translation-status').textContent='Texte effacé sur cet appareil.';document.getElementById('transcript').textContent='Aucune parole reconnue pour le moment.';document.getElementById('interim').textContent='';renderControls();});
 window.addEventListener('pagehide',()=>{if(recognizer&&phase!=='idle')recognizer.abort();});
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&recognizer&&phase!=='idle')recognizer.abort();});
 renderControls();
