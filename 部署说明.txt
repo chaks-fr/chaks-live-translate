@@ -1,0 +1,22 @@
+CHAKS Translate 第二步：上传及发布
+
+当前版本：演示原型。没有真实语音识别、实时翻译、音频播放或多人连接。
+
+1. 打开 https://github.com/chaks-fr/chaks-live-translate/upload/main
+2. 选择本文件夹的五个网站文件：index.html、manifest.webmanifest、sw.js、icon-192.png、icon-512.png。
+3. 请上传文件本身到仓库根目录，不要上传 ZIP，也不要把它们放在额外子文件夹中。
+4. Commit summary 填入：Add CHAKS Translate PWA demo
+5. 保持 Commit directly to the main branch，点击 Commit changes。
+6. 打开仓库 Settings → Pages。
+7. Source 选择 Deploy from a branch；Branch 选择 main；文件夹选择 / (root)；点击 Save。
+8. 等待 Actions 中 pages build and deployment 成功，然后打开：
+   https://chaks-fr.github.io/chaks-live-translate/
+   该网址在部署成功前可能返回 404。
+9. 点击 Animateur / Participant，检查入口文字切换；逐一选择三种语言，检查预写字幕。
+10. iPhone 用 Safari 打开网址，分享 → 添加到主屏幕。
+    Android 用 Chrome 菜单 → 安装应用或添加到主屏幕（名称因浏览器而异）。
+11. 联网首次打开并完成缓存后，可尝试离线重开。离线只展示演示首页。
+
+所有资源使用相对路径，适合 /chaks-live-translate/ 项目子目录。
+首页语言：法语；品牌色：#4C9AA4。
+不要把当前版本用于实际会议翻译。
